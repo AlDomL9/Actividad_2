@@ -5,17 +5,11 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-<<<<<<< HEAD:snake_velocidad.py
-velocidad = 100
-#se utiliza una variable en la que se sellecciona la velocidad
-vel = input("Seleccione velocidad con los números 0, 1, 2 donde dos es el más rápido \n")
-=======
 foodN = vector(0, 0)
 global mouseclickx 
 global mouseclicky
 
 foodNew = True
->>>>>>> origin/JaredBranch:Snake.py
 
 def change(x, y):
     "Change snake direction."
@@ -26,8 +20,6 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
-<<<<<<< HEAD:snake_velocidad.py
-=======
     
 def findcoords(x,y):
     
@@ -39,7 +31,6 @@ def findcoords(x,y):
     #square(mouseclickx,mouseclicky, 9, 'green')
     update()
 
->>>>>>> origin/JaredBranch:Snake.py
 def move():
     print(food.x,food.y)
     print(foodN.x,foodN.y)
@@ -120,7 +111,4 @@ onkey(lambda: change(0, -10), 'Down')
 onscreenclick(findcoords,1)
 move()
 done()
-<<<<<<< HEAD:snake_velocidad.py
-=======
 
->>>>>>> origin/JaredBranch:Snake.py
