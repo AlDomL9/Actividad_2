@@ -48,10 +48,24 @@ def move():
     head = snake[-1].copy()
     head.move(aim)
 
+    # si serpiente choca con una pared o se come a si misma
     if not inside(head) or head in snake:
-        square(head.x, head.y, 9, 'red')
-        update()
-        return
+        # si serpiente choca con el borde izquierdo
+        if head.x < -200:
+            change(aim.x * -1, aim.y)   # cambio direccion en x
+            head.x += 10                # desplazamiento para evitar comerse
+        # si serpiente choca con borde derecho
+        elif head.x > 190:
+            change(aim.x * -1, aim.y)   # cambio de direccion en x
+            head.x -= 10                # desplazamiento para evitar comerse
+        # si serpiente choca con berde inferior
+        if head.y < -200:
+            change(aim.x, aim.y * -1)   # cambio direccion en y
+            head.y += 10                # desplazamiento para evitar comerse
+        # si serpiente choca con borde superior
+        elif head.y > 190:
+            change(aim.x, aim.y * -1)   # cambio direccion en y
+            head.y -= 10                # desplazamiento para evitarse comerse
 
     snake.append(head)
 
