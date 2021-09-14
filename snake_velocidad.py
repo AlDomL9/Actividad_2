@@ -6,7 +6,8 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 velocidad = 100
-vel = input("seleccione velocidad con los numeros 0, 1, 2 donde dos es el más rápido \n")
+#se utiliza una variable en la que se sellecciona la velocidad
+vel = input("Seleccione velocidad con los números 0, 1, 2 donde dos es el más rápido \n")
 
 def change(x, y):
     "Change snake direction."
@@ -43,12 +44,16 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
-    if vel == "0":
+    # si se introduce 0, es la velocidad más lenta
+    if vel == "0" :
         ontimer(move,300)
+    # si se introduce 1, es la velocidad media
     elif vel == "1" :
         ontimer(move, 150)
+    # si se introduce 0, es la velocidad más rápida
     elif vel == "2" :
         ontimer(move, 20)
+    # si se introduce cualquier valor fuera de los 3 válidos (3 anteriores), se manda un mensaje y se termina el programa
     else:
         print("favor de meter un valor dentro del rango 0-2")
         exit(0)
